@@ -1,3 +1,3 @@
-# CXX-MAGICHOUSE
+# DB program
 
-2025.02 A place for hw storing
+2025.02 for bonus
