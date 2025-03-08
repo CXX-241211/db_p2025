@@ -56,7 +56,6 @@ Xiaokang Zhang, Sijia Luo, Bohan Zhang, Zeyao Ma, Jing Zhang, Yang Li, Guanlin L
 
 ### 3.1 V3
 
-+++
 
 ```
 from openai import OpenAI
@@ -110,7 +109,6 @@ Process finished with exit code 0
 
 ### 3.2 R1
 
-+++
 
 ```
 # 换个模型
