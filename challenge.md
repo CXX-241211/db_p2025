@@ -60,7 +60,7 @@ Xiaokang Zhang, Sijia Luo, Bohan Zhang, Zeyao Ma, Jing Zhang, Yang Li, Guanlin L
 ```
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-6ad8421e3c56439882dbb63cacbda090", base_url="https://api.deepseek.com")
+client = OpenAI(api_key="差点暴露了", base_url="https://api.deepseek.com")
 
 response = client.chat.completions.create(
     model="deepseek-chat",
