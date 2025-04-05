@@ -32,8 +32,6 @@
 
 近年来，随着自然语言处理与大语言模型（LLM）的深度融合，Text-to-SQL技术通过跨领域创新与场景化应用取得显著突破：混合SLM-LLM框架通过任务分解与知识迁移机制，在零样本场景下实现执行准确率提升16.4%（ZERONL2SQL）；LLM与数据库系统的深度整合催生新型交互范式，DB-GPT通过提示工程与物理特征优化使查询延迟降低28%，工业级系统OlaChat日均处理百万级复杂查询；多任务学习与对抗训练技术显著增强模型鲁棒性，SQL扰动框架使抗干扰能力提升41%，动态注意力校准机制在MultiHopQA数据集上误差率下降35%。在医疗等垂直领域，研究者提出基于XLM的Text2GraphQL模型，通过Schema-Utterance对齐Adapter注入领域知识，结合指针网络与自注意力修正机制，有效提升医疗实体复制精度和查询生成效率。大规模数据集如BIRD（12,751对文本-SQL）与Gretel（全球最大隐私保护合成数据集）推动技术边界拓展，评估体系新增模式兼容性、可解释性等维度；模型轻量化设计取得突破，TaLM框架以0.8B参数实现与GPT-4相当的多跳推理能力，NanoSQL通过知识蒸馏将延迟压缩至50ms以下。安全与隐私保护成为重要研究方向，DB-GPT的敏感列掩码策略实现99.8%医疗数据隐私保护率，联邦学习框架FedSQL在欧盟《AI法案》框架下支持跨机构协作。这些进展共同推动Text-to-SQL技术从实验室研究走向金融、医疗等垂直领域的规模化应用，标志着人机交互范式从关键词匹配向语义理解与认知决策的范式转变。
 
-
-
 Ju Fan, Zihui Gu, Songyue Zhang, Yuxin Zhang, Zui Chen, Lei Cao, Guoliang Li, Samuel Madden, Xiaoyong Du, and Nan Tang. 2024. Combining Small Language Models and Large Language Models for Zero-Shot NL2SQL. Proc. VLDB Endow. 17, 11 (July 2024), 2750–2763. https://doi.org/10.14778/3681954.3681960
 
 Zhou, X., Sun, Z. & Li, G. DB-GPT: Large Language Model Meets Database. Data Sci. Eng. 9, 102–111 (2024). https://doi.org/10.1007/s41019-023-00235-6
@@ -56,11 +54,12 @@ Xiaokang Zhang, Sijia Luo, Bohan Zhang, Zeyao Ma, Jing Zhang, Yang Li, Guanlin L
 
 ### 3.1 V3
 
++++
 
 ```
 from openai import OpenAI
 
-client = OpenAI(api_key="差点暴露了", base_url="https://api.deepseek.com")
+client = OpenAI(api_key="sk-6ad8421e3c56439882dbb63cacbda090", base_url="https://api.deepseek.com")
 
 response = client.chat.completions.create(
     model="deepseek-chat",
@@ -109,6 +108,7 @@ Process finished with exit code 0
 
 ### 3.2 R1
 
++++
 
 ```
 # 换个模型
@@ -149,7 +149,7 @@ Process finished with exit code 0
 
 
 
-上述本质是一个以列表为元素的集合，而集合又是基于哈希表实现的数据结构，所以要求元素可哈希（不可变=可哈希）。
+上述本质是一个以集合为元素的列表，而集合又是基于哈希表实现的数据结构，所以要求元素可哈希（不可变=可哈希）。
 
 形成集合→哈希函数把集合内容转换为哈希值→映射到对应位置→集合存的不是“值”而是一个位置，你不是通过“更改集合”来进行变化，只单一变动其中部分哈希值（自身属性）会变化，但是地址不会，好比你搬家了（自己的真实住址）但是居委会只知道你的原住址（存储时的地址），就找不到你，会出现丢失问题。为了避免则些事情，直接设置为不合法。
 
